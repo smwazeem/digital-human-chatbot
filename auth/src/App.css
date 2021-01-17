@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Raleway|Work+Sans|Maitree&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Maven+Pro|Heebo&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Abel&display=swap');
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body{
+  height:100%;
+  background-image: linear-gradient(to right bottom, #0055B3, #80499C, #FD2F34);
+  background-size:     cover;                      /* <------ */
+  background-repeat:   no-repeat;
+  background-position: center center;  
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* width */
+::-webkit-scrollbar {
+height: 10px;
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 100px;
+  background: #f1f1f100;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 100px;
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

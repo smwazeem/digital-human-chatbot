@@ -1,0 +1,136 @@
+<!doctype html>
+<!--
+	Solution by GetTemplates.co
+	URL: https://gettemplates.co
+-->
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- awesone fonts css-->
+    <link href="css/font-awesome.css" rel="stylesheet" type="text/css">
+    <!-- owl carousel css-->
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/srilanka.css">
+	<link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <title>Welcome </title>
+    <script>
+    (
+    function() {
+        function Slideshow( element ) {
+            this.el = document.querySelector( element );
+            this.init();
+        }
+        Slideshow.prototype = {
+            init: function() {
+                this.wrapper = this.el.querySelector( ".slider-wrapper" );
+                this.slides = this.el.querySelectorAll( ".slide" );
+                this.previous = this.el.querySelector( ".slider-previous" );
+                this.next = this.el.querySelector( ".slider-next" );
+                this.index = 0;
+                this.total = this.slides.length;
+                this.timer = null;
+                
+                this.action();
+                this.stopStart();   
+            },
+            _slideTo: function( slide ) {
+                var currentSlide = this.slides[slide];
+                currentSlide.style.opacity = 1;
+                
+                for( var i = 0; i < this.slides.length; i++ ) {
+                    var slide = this.slides[i];
+                    if( slide !== currentSlide ) {
+                        slide.style.opacity = 0;
+                    }
+                }
+            },
+            action: function() {
+                var self = this;
+                self.timer = setInterval(function() {
+                    self.index++;
+                    if( self.index == self.slides.length ) {
+                        self.index = 0;
+                    }
+                    self._slideTo( self.index );
+                    
+                }, 5000);
+            },
+            stopStart: function() {
+                var self = this;
+                self.el.addEventListener( "mouseover", function() {
+                    clearInterval( self.timer );
+                    self.timer = null;
+                    
+                }, false);
+                self.el.addEventListener( "mouseout", function() {
+                    self.action();
+                    
+                }, false);
+            }
+        };
+        document.addEventListener( "DOMContentLoaded", function() {
+            var slider = new Slideshow( "#main-slider" );   
+        });   
+    })();
+    </script>
+</head>
+<body>
+    <div class="container" style="margin-left: 15%;">
+        <div class="col-12">
+            <h3>SRI LANKA</h3>
+        </div>
+        <div class="col-10">
+            <p>
+			 Sri Lanka, formerly Ceylon, is an island country lying in the Indian Ocean and separated from peninsular India by the Palk Strait.   Sri Lanka's history, culture, and natural beauty are undeniably alluring. The island's endless beaches, timeless ruins, welcoming people, oodles of elephants, rolling surf, cheap prices, fun trains, famous tea, and flavourful food make Sri Lanka irresistible.
+            </p>
+        </div>
+        <div class="col-md-10">
+            <div class="slider" id="main-slider"><!-- outermost container element -->
+                <div class="slider-wrapper"><!-- innermost wrapper element -->
+                    <img src="images/1.png" alt="First" class="slide" /><!-- slides -->
+                    <img src="images/2.png" alt="Second" class="slide" />
+                    <img src="images/3.png" alt="Third" class="slide" />
+                    <img src="images/4.png" alt="Second" class="slide" />
+                    <img src="images/5.png" alt="Third" class="slide" />
+                    <img src="images/6.png" alt="Second" class="slide" />
+                    <img src="images/7.png" alt="Third" class="slide" />
+                    <img src="images/8.png" alt="Second" class="slide" />
+                    <img src="images/9.png" alt="Third" class="slide" />
+                    <img src="images/10.png" alt="Second" class="slide" />
+                </div>
+            </div> 
+        </div>
+        <div class="col-10">
+            <p>
+			Few places have as many Unesco World Heritage Sites (eight) packed into such a small area. Sri Lanka's 2000-plus years of culture can be discovered at ancient sites where legendary temples boast beautiful details even as they shelter in caves or perch on prominent peaks. Enjoy the highly recommended Safari tours of Sri Lanka’s pleasantly relaxed national parks encounter leopards, water buffaloes, all manner of birds and a passel of primates. Discover a favourite beach, meditate in a 2000-year-old temple, exchange smiles while strolling a mellow village, try to keep count of the little dishes that come with your rice and curry, then hit some epic surf.
+            </p>
+        </div>
+        <div class="col-10 d-flex justify-content-center">
+            <iframe width="70%" height="400px" src="http://players.brightcove.net/5104226627001/default_default/index.html?videoId=5849112677001" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
+        </div>
+    </div>
+
+<!-- scripts -->
+<script src="./js/particles.js"></script>
+<script src="js/js/app.js"/>
+
+
+<footer class="container-fluid" id="gtco-footer">
+   
+</footer>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="js/jquery-3.3.1.slim.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!-- owl carousel js-->
+<script src="owl-carousel/owl.carousel.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

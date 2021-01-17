@@ -1,0 +1,158 @@
+<!doctype html>
+<!--
+	Solution by GetTemplates.co
+	URL: https://gettemplates.co
+-->
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- awesone fonts css-->
+    <link href="css/font-awesome.css" rel="stylesheet" type="text/css">
+    <!-- owl carousel css-->
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <title>Welcome </title>
+    <script>
+        var TxtType = function(el, toRotate, period) {
+            this.toRotate = toRotate;
+            this.el = el;
+            this.loopNum = 0;
+            this.period = parseInt(period, 10) || 2000;
+            this.txt = '';
+            this.tick();
+            this.isDeleting = false;
+        };
+
+        TxtType.prototype.tick = function() {
+            var i = this.loopNum % this.toRotate.length;
+            var fullTxt = this.toRotate[i];
+
+            if (this.isDeleting) {
+                this.txt = fullTxt.substring(0, this.txt.length - 1);
+            } else {
+                this.txt = fullTxt.substring(0, this.txt.length + 1);
+            }
+
+            this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+            var that = this;
+            var delta = 200 - Math.random() * 100;
+
+            if (this.isDeleting) { delta /= 2; }
+
+            if (!this.isDeleting && this.txt === fullTxt) {
+                delta = this.period;
+                this.isDeleting = true;
+            } else if (this.isDeleting && this.txt === '') {
+                this.isDeleting = false;
+                this.loopNum++;
+                delta = 500;
+            }
+
+            setTimeout(function() {
+                that.tick();
+            }, delta);
+        };
+
+        window.onload = function() {
+            var elements = document.getElementsByClassName('typewrite');
+            for (var i=0; i<elements.length; i++) {
+                var toRotate = elements[i].getAttribute('data-type');
+                var period = elements[i].getAttribute('data-period');
+                if (toRotate) {
+                    new TxtType(elements[i], JSON.parse(toRotate), period);
+                }
+            }
+            // INJECT CSS
+            var css = document.createElement("style");
+            css.type = "text/css";
+            css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #000}";
+            document.body.appendChild(css);
+        };
+    </script>
+    <!-- stats.js -->
+    <style>
+        body {
+            text-align: center;
+            padding-top:10em;
+        }
+
+        * { color:#000; text-decoration: none;}
+    </style>
+</head>
+<body>
+    <div>
+        <div class="d-flex justify-content-center" style="z-index: -2;position:absolute;height: 100%;width: 100%;top:0;left:0"/>
+        <div class="container ml-5" style="z-index: 0;position: absolute;">
+            <div class="row col-md-12 mt-3 justify-content-center">
+                <h3 class="mt-4" style="font-family:'Arial';">This DialogFlow demo allows you to speak and ask me questions about:</h3>
+            </div>
+            <div class="row col-md-12 mt-4">
+                <div class="col-md-4">
+                    <img src="botimg.jpg" style="border:1px solid;border-color:rgba(85, 51, 102, 0.8);border-radius: 50%;" width="150px" height="150px"/>
+                </div>
+                <div class="col-md-8 mt-5 text-light" style="border-radius: 50px;background-color: rgba(85, 51, 102, 0);height:50px;">
+                    <h3 class="mt-2" style="font-family:'Arial';color: rgba(85, 51, 102);text-align: left;">1. Myself</h3>
+                </div>
+            </div>
+            <div class="row col-md-12 mt-5">
+                <div class="col-md-4">
+                    <img src="techIcon.png" style="border:1px solid;border-color:rgba(85, 51, 102, 0.8);border-radius: 50%;object-fit: contain;" width="150px" height="150px"/>
+                </div>
+                <div class="col-md-8 mt-5 text-light" style="border-radius: 50px;background-color: rgba(85, 51, 102, 0);height:50px;">
+                    <h3 class="mt-2" style="font-family:'Arial';color: rgba(85, 51, 102);text-align: left;">2. My Technology</h3>
+                </div>
+            </div>
+            <div class="row col-md-12 mt-5">
+                <div class="col-md-4">
+                    <img src="slIcon.png" style="border:1px solid;border-color:rgba(85, 51, 102, 0.8);border-radius: 50%;object-fit: contain;"width="150px" height="150px"/>
+                </div>
+                <div class="col-md-8 mt-5 text-light" style="border-radius: 50px;background-color: rgba(85, 51, 102, 0);height:50px;">
+                    <h3 class="mt-2" style="font-family:'Arial';color: rgba(85, 51, 102);text-align: left;">3. My Country of Origin</h3>
+                </div>
+            </div>
+            <div class="row col-md-12 mt-5 justify-content-center">
+                <h1 style="font-family:'Arial';color:rgba(85, 51, 102);">
+                    Example: 
+                </h1>
+            </div>
+            <div class="row col-md-12 justify-content-center">
+                <h1 style="font-family:'Arial';">
+                    <a class="typewrite" data-period="2000" data-type='[ "Who are you?", "What can you do?", "Who made you?", "How do you work?", "Where are you from?", "Can my bot connect to you?"]'>
+                        <span class="wrap"></span>
+                    </a>
+                </h1>
+            </div>
+            <div class="row col-md-12 mt-4 justify-content-center">
+                <p style="font-family:'Arial';">
+                    To Use: Press the Microphone Button on the Chat Window and speak.
+                </p>
+            </div>
+        </div>
+    </div>
+
+<!-- scripts -->
+<script src="./js/particles.js"></script>
+<script src="js/js/app.js"/>
+
+
+<footer class="container-fluid" id="gtco-footer">
+   
+</footer>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="js/jquery-3.3.1.slim.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!-- owl carousel js-->
+<script src="owl-carousel/owl.carousel.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
